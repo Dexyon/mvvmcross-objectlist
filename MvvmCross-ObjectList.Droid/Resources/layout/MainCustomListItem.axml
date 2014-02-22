@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="15px"
-    style="@style/ItemStyle">
+    style="@style/ItemStyle"
+    android:background="@android:color/background_light">
     <TableLayout
         android:id="@+id/tableLayoutSummary"
         android:layout_width="fill_parent"
