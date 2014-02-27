@@ -7,6 +7,7 @@ using Dexyon.MvvmCrossObjectList.Core.ViewModels;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using System.Collections.Generic;
+using Dexyon.MvvmCrossObjectList.ViewModels;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class ExampleOverviewView : MvxViewController {
@@ -61,6 +62,20 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 
 			set.Bind ( source )
 				.To ( vm => vm.ExampleViewModel );
+
+			set
+				.Bind ( BoiletPlateLabel1 )
+				.To ( vm => vm.ExampleViewModel.Count );
+			set
+				.Bind ( BoiletPlateTextField1 )
+				.To ( vm => vm.ExampleViewModel.Count );
+
+			set
+				.Bind ( BoiletPlateLabel2 )
+				.To ( vm => vm.ExampleViewModel.Distance );
+			set
+				.Bind ( BoiletPlateTextField2 )
+				.To ( vm => vm.ExampleViewModel.Distance );
 
 			set.Apply ();
 			TableView.ReloadData ();
