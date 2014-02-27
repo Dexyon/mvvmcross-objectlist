@@ -1,13 +1,7 @@
-﻿using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+﻿using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
-using Cirrious.MvvmCross.Binding.Touch.Views;
-using Cirrious.MvvmCross.Binding.BindingContext;
-using System.Collections.Generic;
-using Dexyon.MvvmCrossObjectList.ViewModels;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class ExampleOverviewView : MvxViewController {

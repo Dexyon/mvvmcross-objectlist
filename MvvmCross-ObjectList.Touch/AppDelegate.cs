@@ -1,9 +1,9 @@
-﻿using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Touch.Platform;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Views.Presenters;
+using Cirrious.MvvmCross.ViewModels;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
 using Dexyon.MvvmCrossObjectList.Touch;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
