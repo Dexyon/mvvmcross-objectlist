@@ -135,9 +135,9 @@
       <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
       <Name>MvvmCross-ObjectList.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross-ObjectList\MvvmCross-ObjectList.csproj">
+    <ProjectReference Include="..\MvvmCross-ObjectList\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
-      <Name>MvvmCross-ObjectList</Name>
+      <Name>MvvmCross-ObjectList.Proxy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

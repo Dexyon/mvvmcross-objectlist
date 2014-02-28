@@ -5,11 +5,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <MvxListView
-        android:id="@+id/SummaryList"
+        android:id="@+id/PersonList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:paddingBottom="1dp"
         android:dividerHeight="1dp"
-        local:MvxBind="ItemsSource ExampleViewModel"
-        local:MvxItemTemplate="@layout/maincustomlistitem" />
+        local:MvxBind="ItemsSource CurrentPerson" />
 </LinearLayout>

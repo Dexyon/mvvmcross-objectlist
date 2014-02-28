@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15px"
+    style="@style/ItemStyle">
+    <TableLayout
+        android:id="@+id/tableLayoutSummary"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+        <TableRow
+            android:id="@+id/tableRowSummary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp">
+            <TextView
+                android:id="@+id/MainCustom_Description"
+                android:text="Description"
+                style="@style/TableRow_Fixed_TextViewStyle"
+                local:MvxBind="Text Description" />
+            <MvxDatePicker
+                android:layout_column="1"
+                android:id="@+id/MainCustom_Value"
+                local:MvxBind="Value Value"
+                style="@android:style/Widget.DatePicker" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
