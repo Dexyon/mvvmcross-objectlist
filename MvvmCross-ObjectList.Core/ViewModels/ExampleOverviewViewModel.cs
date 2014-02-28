@@ -19,7 +19,7 @@ namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
 				FullName = "Jelle Damen",
 				BirthDate = new System.DateTime(1987,2,10),
 				BirthPlace = "Hoofddorp",
-				HasChildren = false
+				//HasChildren = false
 			};
 
 			CurrentPerson = new ProxyModel<Person>(_currentPerson,()=>{
