@@ -85,6 +85,7 @@
     <AndroidResource Include="Resources\layout\ListItem_ReadOnly.axml" />
     <AndroidResource Include="Resources\layout\ListItem_TextEdit.axml" />
     <AndroidResource Include="Resources\layout\ListItem_DatePicker.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_Bool.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

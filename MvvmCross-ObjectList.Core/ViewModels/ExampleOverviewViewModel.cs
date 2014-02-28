@@ -17,24 +17,23 @@ namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
 			_currentPerson = new Person ()
 			{ 
 				FullName = "Jelle Damen",
-				Birthdate = new System.DateTime(1987,2,10),
-				BirthPlace = "Hoofddorp"
+				BirthDate = new System.DateTime(1987,2,10),
+				BirthPlace = "Hoofddorp",
+				HasChildren = false
 			};
 
-			_currentPersonProxy = new ProxyModel<Person> (_currentPerson);
+			CurrentPerson = new ProxyModel<Person>(_currentPerson,()=>{
+				RaisePropertyChanged(()=> CurrentPerson);
+			});
 		}
 
-
 		private Person _currentPerson;
-		private ProxyModel<Person> _currentPersonProxy;
-		public ProxyModel<Person> CurrentPerson
-		{
-			get {return _currentPersonProxy;}
-			set{ 
-				_currentPersonProxy = value;
-				RaisePropertyChanged(()=> CurrentPerson);
-			}
 
+		public ProxyModel<Person> CurrentPerson
+		{ 
+			get; 
+
+			set; 
 		}
     }
 }

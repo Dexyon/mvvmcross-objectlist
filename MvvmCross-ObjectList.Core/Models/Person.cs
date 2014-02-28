@@ -6,12 +6,17 @@ namespace Dexyon.MvvmCrossObjectList.Core.Models
 	{
 
 		public string FullName { get; set; }
-		public string BirthPlace { get; set;}
-		public DateTime Birthdate {get;set;}
+
+		public string BirthPlace { get; set; }
+
+		public DateTime BirthDate {get;set;}
+
+		//public bool HasChildren { get; set;}
+
 		public int Age
 		{
 			get{ 
-				return (int)((DateTime.Now - Birthdate).TotalDays / 365);
+				return (int)((DateTime.Now - BirthDate).TotalDays / 365);
 			}
 		}
 

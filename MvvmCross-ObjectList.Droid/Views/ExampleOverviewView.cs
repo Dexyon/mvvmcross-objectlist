@@ -20,11 +20,12 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 		{
 			base.OnCreate (bundle);
 			adapter = new ObjectListAdapter (this.BaseContext, (IMvxAndroidBindingContext)this.BindingContext);
-		
+
 			//One layout to rule them all
 			adapter.Setup (new System.Collections.Generic.List<TemplateSelector> ()
 				{ 
 					new TemplateSelector((c)=>c.IsReadOnly,Resource.Layout.ListItem_ReadOnly),
+					//new TemplateSelector((c)=>c.ValueType == typeof(bool),Resource.Layout.ListItem_Bool),
 					new TemplateSelector((c)=>c.ValueType == typeof(DateTime),Resource.Layout.ListItem_DatePicker),
 					new TemplateSelector((c)=>true,Resource.Layout.ListItem_TextEdit)
 				}
@@ -34,9 +35,7 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			SetContentView ( Resource.Layout.Main );
 
 			var list = FindViewById<MvxListView> (Resource.Id.PersonList);
-			if (list != null) {
-				list.Adapter = adapter;
-			}
+			list.Adapter = adapter;
 		}
 		 
 		protected override void OnViewModelSet()
