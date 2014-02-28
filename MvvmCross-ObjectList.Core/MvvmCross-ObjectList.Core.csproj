@@ -33,18 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ExampleViewModel.cs" />
     <Compile Include="ViewModels\ExampleOverviewViewModel.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Models\Person.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross-ObjectList\MvvmCross-ObjectList.csproj">
+    <ProjectReference Include="..\MvvmCross-ObjectList\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
-      <Name>MvvmCross-ObjectList</Name>
+      <Name>MvvmCross-ObjectList.Proxy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

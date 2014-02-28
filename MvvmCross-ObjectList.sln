@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. MvvmCross Libs", "2. Mvv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross-ObjectList.Core", "MvvmCross-ObjectList.Core\MvvmCross-ObjectList.Core.csproj", "{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. ObjectList Binding", "3. ObjectList Binding", "{F42BAC5A-5950-4A27-A8D8-F3FCAF335A8C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. GeneratedObjectList projects", "3. GeneratedObjectList projects", "{F42BAC5A-5950-4A27-A8D8-F3FCAF335A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross-ObjectList", "MvvmCross-ObjectList\MvvmCross-ObjectList.csproj", "{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross-ObjectList.Proxy", "MvvmCross-ObjectList\MvvmCross-ObjectList.Proxy.csproj", "{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross-ObjectList.Droid.UILib", "MvvmCross-ObjectList\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj", "{3599BAF2-49C0-403D-B777-47E93960F581}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B04F72FB-ABDF-4716-BC35-8D232154B94F}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,6 +34,22 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|iPhone.Build.0 = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3599BAF2-49C0-403D-B777-47E93960F581}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{4A7E575B-8937-4FD3-BC10-A71B9EC3ACD5}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{4A7E575B-8937-4FD3-BC10-A71B9EC3ACD5}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{4A7E575B-8937-4FD3-BC10-A71B9EC3ACD5}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
@@ -94,6 +112,7 @@ Global
 		{98A2BBC4-399A-462B-ABD9-384379EEE888} = {4F80DE92-DB72-45DA-8984-07AECA11EEFE}
 		{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3} = {6D54C41F-C33D-4F9E-B17D-A5E18F78FB11}
 		{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF} = {F42BAC5A-5950-4A27-A8D8-F3FCAF335A8C}
+		{3599BAF2-49C0-403D-B777-47E93960F581} = {F42BAC5A-5950-4A27-A8D8-F3FCAF335A8C}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MvvmCross-ObjectList.Droid\MvvmCross-ObjectList.Droid.csproj
