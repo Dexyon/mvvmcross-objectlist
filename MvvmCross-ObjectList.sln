@@ -96,6 +96,6 @@ Global
 		{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF} = {F42BAC5A-5950-4A27-A8D8-F3FCAF335A8C}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MvvmCross-ObjectList.Touch\MvvmCross-ObjectList.Touch.csproj
+		StartupItem = MvvmCross-ObjectList.Droid\MvvmCross-ObjectList.Droid.csproj
 	EndGlobalSection
 EndGlobal
