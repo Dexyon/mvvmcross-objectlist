@@ -6,13 +6,15 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 	{
 		private Action<object> _valueSetter;
 		private Func<object> _valueGetter;
+		private Type _valueType;
 
 		public ProxyProperty ()
 		{
 		}
 
-		internal ProxyProperty (string description, Action<object> valueSetter, Func<object> valueGetter)
+		internal ProxyProperty (Type valueType, string description, Action<object> valueSetter, Func<object> valueGetter)
 		{
+			_valueType = valueType;
 			Description = description;
 			_valueGetter = valueGetter;
 			_valueSetter = valueSetter;
@@ -33,13 +35,22 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 			}
 		}
 
-
 		public string Description {
 			get;
 			set;
 		}
 
+		public bool IsReadOnly{
+			get{ 
+				return _valueSetter == null;
+			}
+		}
 
+		public Type ValueType{
+			get{ 
+				return _valueType;
+			}
+		}
 	}
 }
 

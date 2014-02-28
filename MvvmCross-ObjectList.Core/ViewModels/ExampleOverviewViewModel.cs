@@ -1,5 +1,6 @@
 using Cirrious.MvvmCross.ViewModels;
 using Dexyon.MvvmCrossObjectList.Core.Models;
+using Dexyon.MvvmCrossObjectList.Proxy;
 
 namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
 
@@ -13,22 +14,27 @@ namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
 		/// <see cref="Dexyon.MvvmCrossObjectList.Core.ViewModels.ExampleOverviewViewModel"/> class.
 		/// </summary>
 		public ExampleOverviewViewModel () {
-			ExampleModel = new Person ()
+			_currentPerson = new Person ()
 			{ 
 				FullName = "Jelle Damen",
 				Birthdate = new System.DateTime(1987,2,10),
 				BirthPlace = "Hoofddorp"
 			};
+
+			_currentPersonProxy = new ProxyModel<Person> (_currentPerson);
 		}
 
-		private Person _exampleModel;
-		public Person ExampleModel
+
+		private Person _currentPerson;
+		private ProxyModel<Person> _currentPersonProxy;
+		public ProxyModel<Person> CurrentPerson
 		{
-			get { return _exampleModel; }
-			set { 
-				_exampleModel = value;
-				RaisePropertyChanged("ExampleModel"); 
+			get {return _currentPersonProxy;}
+			set{ 
+				_currentPersonProxy = value;
+				RaisePropertyChanged(()=> CurrentPerson);
 			}
+
 		}
     }
 }

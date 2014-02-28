@@ -3,6 +3,7 @@ using Cirrious.MvvmCross.Binding.Droid.Views;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using System.Collections.Generic;
 using Android.Views;
+using Dexyon.MvvmCrossObjectList.Proxy;
 
 namespace MvvmCrossObjectList.Droid.UILib
 {
@@ -28,12 +29,13 @@ namespace MvvmCrossObjectList.Droid.UILib
 			if (_setup)
 				return 0;
 
-			var item = GetRawItem (position);
+			var item = GetRawItem (position) as ProxyProperty;
+
 			for (int i = 0; i < _templateSelectors.Count; i++) {
 				if (_templateSelectors [i].Condition (item))
 					return i;
 			} 
-			//notining applies
+			//nothing applies
 			return 0;
 		}
 
@@ -52,7 +54,7 @@ namespace MvvmCrossObjectList.Droid.UILib
 				return base.GetBindableView (convertView, source, templateId);
 
 			foreach (var sel in _templateSelectors) {
-				if (sel.Condition (source)) {
+				if (sel.Condition (source as ProxyProperty)) {
 					templateId = sel.TemplateId;
 					break;
 				}
@@ -64,13 +66,13 @@ namespace MvvmCrossObjectList.Droid.UILib
 
 	public class TemplateSelector
 	{
-		public TemplateSelector(Predicate<object> condition, int templateId)
+		public TemplateSelector(Predicate<ProxyProperty> condition, int templateId)
 		{
 			Condition = condition;
 			TemplateId = templateId;
 		}
 
-		public Predicate<object> Condition {get;set;}
+		public Predicate<ProxyProperty> Condition {get;set;}
 		public int TemplateId {get;set;}
 	}
 }
