@@ -7,10 +7,10 @@
 using MonoTouch.Foundation;
 using System.CodeDom.Compiler;
 
-namespace Dexyon.MvvmCrossObjectList.Touch
+namespace MvvmCrossObjectList.Touch.UILib
 {
-	[Register ("ExampleOverviewTableCell")]
-	partial class ExampleOverviewTableCell
+	[Register ("MvxDefaultObjectListTableCell")]
+	partial class MvxDefaultObjectListTableCell
 	{
 		[Outlet]
 		MonoTouch.UIKit.UILabel lblDescription { get; set; }

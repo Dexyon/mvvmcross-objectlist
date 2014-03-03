@@ -1,7 +1,7 @@
 ﻿using Cirrious.MvvmCross.Binding.BindingContext;
-using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
+using MvvmCrossObjectList.Touch.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class ExampleOverviewView : MvxViewController {
@@ -40,36 +40,32 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 			TableView.Source = source;
 			TableView.ReloadData();*/
 
-			var source = new 
-				MvxSimpleTableViewSource(
-					TableView, 
-					ExampleOverviewTableCell.Key, 
-					ExampleOverviewTableCell.Key);
+			var source = new ObjectListViewSource( TableView );
 			TableView.Source = source;
 
 			this.CreateBinding(source)
-				.To<ExampleOverviewViewModel>(vm => vm.ExampleViewModel)
+				.To<ExampleOverviewViewModel>(vm => vm.CurrentPerson)
 				.Apply();
 
 			// Perform our MVVM Binding
 			var set = this.CreateBindingSet<ExampleOverviewView, ExampleOverviewViewModel> ();
 
 			set.Bind ( source )
-				.To ( vm => vm.ExampleViewModel );
+				.To ( vm => vm.CurrentPerson );
 
 			set
 				.Bind ( BoiletPlateLabel1 )
-				.To ( vm => vm.ExampleViewModel.Count );
+				.To ( vm => vm.CurrentPerson.baseModel.Age );
 			set
 				.Bind ( BoiletPlateTextField1 )
-				.To ( vm => vm.ExampleViewModel.Count );
+				.To ( vm => vm.CurrentPerson.baseModel.Age );
 
 			set
 				.Bind ( BoiletPlateLabel2 )
-				.To ( vm => vm.ExampleViewModel.Distance );
+				.To ( vm => vm.CurrentPerson.baseModel.BirthPlace );
 			set
 				.Bind ( BoiletPlateTextField2 )
-				.To ( vm => vm.ExampleViewModel.Distance );
+				.To ( vm => vm.CurrentPerson.baseModel.BirthPlace );
 
 			set.Apply ();
 			TableView.ReloadData ();

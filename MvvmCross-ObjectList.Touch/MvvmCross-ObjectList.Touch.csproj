@@ -124,10 +124,6 @@
     <Compile Include="Views\ExampleOverviewView.designer.cs">
       <DependentUpon>ExampleOverviewView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ExampleOverviewTableCell.cs" />
-    <Compile Include="Views\ExampleOverviewTableCell.designer.cs">
-      <DependentUpon>ExampleOverviewTableCell.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -135,9 +131,13 @@
       <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
       <Name>MvvmCross-ObjectList.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross-ObjectList\MvvmCross-ObjectList.Proxy.csproj">
+    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
       <Name>MvvmCross-ObjectList.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Touch.UILib\MvvmCross-ObjectList.Touch.UILib.csproj">
+      <Project>{09FB19E6-6E7F-4654-88DD-4225F5843108}</Project>
+      <Name>MvvmCross-ObjectList.Touch.UILib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +145,5 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\ExampleOverviewView.xib" />
-    <InterfaceDefinition Include="Views\ExampleOverviewTableCell.xib" />
   </ItemGroup>
 </Project>
