@@ -13,7 +13,10 @@
 			- Added the first demo project for Touch and Droid
     </releaseNotes>
     <copyright>Copyright 2014</copyright>
-    <tags>mvvmcross objectList</tags>
+    <tags>mvvm mvvmcross xamarin monodroid monotouch objectList</tags>
+    <dependencies>
+		<dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+	</dependencies>
   </metadata>
   <files>		    
 	<!-- droid -->
