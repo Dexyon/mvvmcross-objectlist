@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Mvvmcross-ObjectList</id>
+    <version>0.1</version>
+    <title>MvvmCross ObjectList</title>
+    <authors>Dexyon, JelleDamen</authors>
+    <owners>Erik van Seters, Jelle Damen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple proxy library, which converts an object into a list of key-values</description>
+    <releaseNotes>
+    	Version 0.1
+			- Added the first demo project for Touch and Droid
+    </releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>mvvmcross objectList</tags>
+  </metadata>
+  <files>		    
+	<!-- droid -->
+	<file src="MvvmCross-ObjectList.Proxy/MvvmCross-ObjectList.Droid.UILib/bin/Release/Dexyon.MvvmCrossObjectList.Proxy.dll" target="lib\MonoAndroid\Dexyon.MvvmCrossObjectList.Proxy.dll" />
+	<file src="MvvmCross-ObjectList.Proxy/MvvmCross-ObjectList.Droid.UILib/bin/Release/Dexyon.MvvmCrossObjectList.Droid.dll" target="lib\MonoAndroid\Dexyon.MvvmCrossObjectList.Droid.dll" />
+
+	<!-- touch -->
+	<file src="MvvmCross-ObjectList.Proxy/MvvmCross-ObjectList.Touch.UILib/bin/Release/Dexyon.MvvmCrossObjectList.Proxy.dll " target="lib\MonoTouch\Dexyon.MvvmCrossObjectList.Proxy.dll" />
+	<file src="MvvmCross-ObjectList.Proxy/MvvmCross-ObjectList.Touch.UILib/bin/Release/Dexyon.MvvmCrossObjectList.Touch.dll" target="lib\MonoTouch\Dexyon.MvvmCrossObjectList.Touch.dll" />
+  </files>
+
+</package>
