@@ -44,10 +44,19 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 
 			foreach ( var item in props ) {
 
+				// Get the attributes from our Attribute component
+				var attrs = new List<Attribute>(
+					item.GetCustomAttributes ( typeof(ProxyModelAttribute), false ));
+
+				ProxyModelAttribute objectProperty = null;
+				if ( attrs.Any () ) {
+					objectProperty = (ProxyModelAttribute)attrs [0];
+				} 
+
 				//Create a new proxy property
 				ProxyProperty proxyProp = new ProxyProperty(
 					item.PropertyType,											// Value type
-					item.Name, 												 	// description
+					ConvertDescription(item, objectProperty),				 	// description
 					item.CanWrite ?
 						new Action<object>((v)=> {
 							item.SetValue(instance,v,null);
@@ -55,10 +64,10 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 						})
 						: null, 												// setter (if exists)
 					new Func<object>(()=>item.GetValue(instance,null)), 		// getter
-					ExecuteNotifyAllProperties									//Notifies other properties
+					ExecuteNotifyAllProperties									// Notifies other properties
 				);
 					
-				//Add it to the list
+				// Add it to the list
 				Add (proxyProp);
 	
 			}
@@ -78,6 +87,12 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 					prop.MyValueChangedAsWell ();
 				}
 			}
+		}
+
+		private static string ConvertDescription (PropertyInfo item, ProxyModelAttribute objectProperty) {
+			return objectProperty != null && !string.IsNullOrEmpty(objectProperty.Description) 
+				? objectProperty.Description 
+					: item.Name;
 		}
 
 	}
