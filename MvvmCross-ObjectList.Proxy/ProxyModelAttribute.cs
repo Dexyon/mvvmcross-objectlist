@@ -10,12 +10,6 @@ namespace Dexyon.MvvmCrossObjectList.Proxy {
 		public string Description { get; set; }
 
 		/// <summary>
-		/// Gets or sets the value.
-		/// </summary>
-		/// <value>The value.</value>
-		public string ValueConverter { get; set; }
-
-		/// <summary>
 		/// Gets or sets the order.
 		/// </summary>
 		/// <value>The order.</value>
