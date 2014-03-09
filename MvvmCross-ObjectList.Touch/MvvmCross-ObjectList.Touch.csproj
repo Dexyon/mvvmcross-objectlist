@@ -124,7 +124,12 @@
     <Compile Include="Views\ExampleOverviewView.designer.cs">
       <DependentUpon>ExampleOverviewView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Converters\AgeConverter.cs" />
+    <Compile Include="Converters\BirthDateConverter.cs" />
+    <Compile Include="Converters\SalaryConverter.cs" />
+    <Compile Include="Views\SalaryTableCell.cs" />
+    <Compile Include="Views\SalaryTableCell.designer.cs">
+      <DependentUpon>SalaryTableCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -147,5 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\ExampleOverviewView.xib" />
+    <InterfaceDefinition Include="Views\SalaryTableCell.xib" />
   </ItemGroup>
 </Project>
