@@ -64,12 +64,17 @@
     <Reference Include="Cirrious.MvvmCross">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\ExampleOverviewView.cs" />
+    <Compile Include="Converters\SalaryValueConverter.cs" />
+    <Compile Include="Converters\BirthDateValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -86,6 +91,7 @@
     <AndroidResource Include="Resources\layout\ListItem_TextEdit.axml" />
     <AndroidResource Include="Resources\layout\ListItem_DatePicker.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Bool.axml" />
+    <AndroidResource Include="Resources\layout\ListItem_Salary.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
