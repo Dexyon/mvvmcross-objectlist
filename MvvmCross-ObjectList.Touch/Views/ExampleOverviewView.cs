@@ -4,6 +4,7 @@ using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
 using MonoTouch.Foundation;
 using MvvmCrossObjectList.Touch.UILib;
+using MonoTouch.UIKit;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class ExampleOverviewView : MvxViewController {
@@ -42,6 +43,11 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 			TableView.Source = source;
 			TableView.ReloadData();*/
 
+			TableView.RegisterNibForCellReuse(
+				UINib.FromName("SalaryTableCell", NSBundle.MainBundle),
+				new NSString("SalaryTableCell")
+			);
+
 			var source = new ObjectListViewSource( TableView );
 			source.Setup (
 				new System.Collections.Generic.List<TemplateSelector> ()
@@ -49,8 +55,12 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 					new TemplateSelector ( 
 						c => c.ValueType == typeof(DateTime), 
 						new NSString("MvxDefaultObjectListTableCell"),
-						new AgeConverter()
-					) 
+						new BirthDateConverter()
+					),
+					new TemplateSelector (
+						c => c.OriginalDescription == "Salary",
+						new NSString("SalaryTableCell")
+					),
 				}
 			);
 

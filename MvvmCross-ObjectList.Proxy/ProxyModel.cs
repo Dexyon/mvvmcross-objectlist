@@ -56,7 +56,8 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 				//Create a new proxy property
 				ProxyProperty proxyProp = new ProxyProperty(
 					item.PropertyType,											// Value type
-					ConvertDescription(item, objectProperty),				 	// description
+					ConvertDescription(item, objectProperty),				 	// converted description
+					item.Name, 													// The original description name
 					item.CanWrite ?
 						new Action<object>((v)=> {
 							item.SetValue(instance,v,null);
@@ -66,7 +67,7 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 					new Func<object>(()=>item.GetValue(instance,null)), 		// getter
 					ExecuteNotifyAllProperties									// Notifies other properties
 				);
-					
+
 				// Add it to the list
 				Add (proxyProp);
 	

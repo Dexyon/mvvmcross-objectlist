@@ -14,10 +14,11 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 		{
 		}
 
-		internal ProxyProperty (Type valueType, string description, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged)
+		internal ProxyProperty (Type valueType, string description, string originalDescription, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged)
 		{
 			_valueType = valueType;
 			Description = description;
+			OriginalDescription = originalDescription;
 			_valueGetter = valueGetter;
 			_valueSetter = valueSetter;
 
@@ -55,6 +56,11 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 			if (PropertyChanged != null) {
 				PropertyChanged (this, new PropertyChangedEventArgs ("Value"));
 			}
+		}
+
+		public string OriginalDescription {
+			get;
+			private set;
 		}
 
 		public string Description {

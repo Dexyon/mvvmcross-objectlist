@@ -1,14 +1,21 @@
 ﻿using System;
+using System.Globalization;
 using Cirrious.CrossCore.Converters;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
-	public class AgeConverter : MvxValueConverter<DateTime, string> {
+	public class BirthDateConverter : MvxValueConverter<DateTime, string> {
+
+		private const string DateTimeFormat = "d"; 
+
 		protected override string Convert (DateTime value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
-			return "Test";
+			return value.ToString(DateTimeFormat);
 		}
 
 		protected override DateTime ConvertBack (string value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
-			return new DateTime ( 1970, 1, 1 );
+			return DateTime.ParseExact ( 
+				value, 
+				DateTimeFormat, 
+				CultureInfo.InvariantCulture );
 		}
 	}
 }

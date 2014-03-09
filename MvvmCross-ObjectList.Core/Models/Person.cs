@@ -25,6 +25,9 @@ namespace Dexyon.MvvmCrossObjectList.Core.Models
 			}
 		}
 
+		[ProxyModelAttribute(Description = "Salary: ")]
+		public double Salary { get; set; }
+
 	}
 }
 
