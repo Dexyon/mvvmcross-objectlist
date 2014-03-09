@@ -124,6 +124,7 @@
     <Compile Include="Views\ExampleOverviewView.designer.cs">
       <DependentUpon>ExampleOverviewView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Converters\AgeConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\ExampleOverviewView.xib" />
