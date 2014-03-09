@@ -1,14 +1,10 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Cirrious.MvvmCross.Droid.Views;
-using Cirrious.MvvmCross.Binding.Droid.Views;
-using MvvmCrossObjectList.Droid.UILib;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+using Cirrious.MvvmCross.Binding.Droid.Views;
+using Cirrious.MvvmCross.Droid.Views;
+using MvvmCrossObjectList.Droid.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Droid {
 	[Activity ( Label = "ExampleOverviewView.Droid", MainLauncher = true )]

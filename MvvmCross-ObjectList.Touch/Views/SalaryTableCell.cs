@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MvvmCrossObjectList.Touch.UILib;
-using Cirrious.MvvmCross.Binding.BindingContext;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class SalaryTableCell : MvxTableViewCell {

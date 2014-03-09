@@ -8,7 +8,6 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			return string.Format("€ {0}", value);
 		}
 
-
 		protected double ConvertBack (string value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
 			return double.Parse(value.Replace("€", "").Trim());
 		}

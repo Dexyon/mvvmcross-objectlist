@@ -1,5 +1,5 @@
-﻿using Cirrious.MvvmCross.Droid.Platform;
-using Android.Content;
+﻿using Android.Content;
+using Cirrious.MvvmCross.Droid.Platform;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace Dexyon.MvvmCrossObjectList.Droid {

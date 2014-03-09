@@ -3,8 +3,8 @@ using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
 using MonoTouch.Foundation;
-using MvvmCrossObjectList.Touch.UILib;
 using MonoTouch.UIKit;
+using MvvmCrossObjectList.Touch.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public partial class ExampleOverviewView : MvxViewController {

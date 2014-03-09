@@ -1,8 +1,8 @@
 ﻿using System;
-using Cirrious.MvvmCross.Binding.Droid.Views;
-using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using System.Collections.Generic;
 using Android.Views;
+using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+using Cirrious.MvvmCross.Binding.Droid.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
 
 namespace MvvmCrossObjectList.Droid.UILib

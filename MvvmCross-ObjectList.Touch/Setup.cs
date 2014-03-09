@@ -12,8 +12,7 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 
 		protected override IMvxApplication CreateApp()
 		{
-			var app = new App();
-			return app;
+			return new App ();
 		}
 	}
 }
