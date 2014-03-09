@@ -1,30 +1,36 @@
 ﻿using System;
-using System.Drawing;
 using Cirrious.MvvmCross.Binding.BindingContext;
-using Cirrious.MvvmCross.Binding.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 namespace MvvmCrossObjectList.Touch.UILib {
-	public partial class MvxDefaultObjectListTableCell : MvxTableViewCell {
+	public partial class MvxDefaultObjectListTableCell : MvxObjectListTableViewCell {
 
 		public static readonly UINib Nib = 
 			UINib.FromName ( "MvxDefaultObjectListTableCell", NSBundle.MainBundle );
 		public static readonly NSString Key = 
 			new NSString ( "MvxDefaultObjectListTableCell" );
 
-		public MvxDefaultObjectListTableCell ( IntPtr handle ) : base ( handle ) {
+		public MvxDefaultObjectListTableCell ( IntPtr handle ) 
+			: base ( handle ) {
 			this.DelayBind(() => {
-				var set = 
+				var bindingSet = 
 					this.CreateBindingSet<MvxDefaultObjectListTableCell, ProxyProperty> ();
-				set.Bind (lblDescription)
+				bindingSet.Bind (lblDescription)
 					.To (item => item.Description);
-				set.Bind (lblValue)
-					.To (item => item.Value);
-				set.Apply();
-			});
 
+				if ( base.ValueConverter != null ) {
+					bindingSet.Bind (lblValue)
+						.To (item => item.Value)
+						.WithConversion( base.ValueConverter, null );
+				} else {
+					bindingSet.Bind (lblValue)
+						.To (item => item.Value);
+				}
+
+				bindingSet.Apply();
+			});
 		}
 
 		public static MvxDefaultObjectListTableCell Create () {

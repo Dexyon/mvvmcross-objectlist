@@ -1,6 +1,8 @@
-﻿using Cirrious.MvvmCross.Binding.BindingContext;
+﻿using System;
+using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
+using MonoTouch.Foundation;
 using MvvmCrossObjectList.Touch.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
@@ -41,6 +43,17 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 			TableView.ReloadData();*/
 
 			var source = new ObjectListViewSource( TableView );
+			source.Setup (
+				new System.Collections.Generic.List<TemplateSelector> ()
+				{ 
+					new TemplateSelector ( 
+						c => c.ValueType == typeof(DateTime), 
+						new NSString("MvxDefaultObjectListTableCell"),
+						new AgeConverter()
+					) 
+				}
+			);
+
 			TableView.Source = source;
 
 			this.CreateBinding(source)

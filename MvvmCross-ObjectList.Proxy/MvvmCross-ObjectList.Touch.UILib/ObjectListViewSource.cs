@@ -4,6 +4,7 @@ using Cirrious.MvvmCross.Binding.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Cirrious.CrossCore.Converters;
 
 namespace MvvmCrossObjectList.Touch.UILib {
 	public class ObjectListViewSource : MvxTableViewSource {
@@ -45,17 +46,26 @@ namespace MvvmCrossObjectList.Touch.UILib {
 		protected override UITableViewCell GetOrCreateCellFor ( UITableView tableView, NSIndexPath indexPath, object item ) {
 
 			NSString cellIdentifier = DefaultCellIdentifier;
+			TemplateSelector templateSelector = null;
 
 			if ( !_noCustomTemplates ) {
 				foreach ( var sel in _templateSelectors ) {
 					if ( sel.Condition ( item as ProxyProperty ) ) {
 						cellIdentifier = sel.CellIdentifier;
+						templateSelector = sel;
 						break;
 					}
 				}
 			}
+			var reusableCell = 
+				TableView.DequeueReusableCell ( cellIdentifier, indexPath );
 
-			return TableView.DequeueReusableCell ( cellIdentifier, indexPath );
+			if ( reusableCell is MvxObjectListTableViewCell  && templateSelector != null ) {
+				((MvxObjectListTableViewCell)reusableCell).ValueConverter = 
+					templateSelector.ValueConverter;
+			}
+
+			return reusableCell;
 		}
 
 		#endregion
@@ -69,8 +79,15 @@ namespace MvvmCrossObjectList.Touch.UILib {
 			CellIdentifier = cellIdentifier;
 		}
 
+		public TemplateSelector ( Predicate<ProxyProperty> condition, NSString cellIdentifier, IMvxValueConverter valueConverter ) 
+			: this ( condition, cellIdentifier )
+		{
+			this.ValueConverter = valueConverter;
+		}
+
 		public Predicate<ProxyProperty> Condition {get;set;}
 		public NSString CellIdentifier {get;set;}
+		public IMvxValueConverter ValueConverter { get; private set; }
 	}
 }
 

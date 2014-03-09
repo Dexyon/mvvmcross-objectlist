@@ -62,6 +62,7 @@
     <Compile Include="Views\MvxDefaultObjectListTableCell.designer.cs">
       <DependentUpon>MvxDefaultObjectListTableCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="MvxObjectListTableViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj">
