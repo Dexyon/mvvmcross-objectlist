@@ -73,13 +73,28 @@ namespace MvvmCrossObjectList.Touch.UILib {
 
 	public class TemplateSelector
 	{
-		public TemplateSelector(Predicate<ProxyProperty> condition, NSString cellIdentifier)
+		public TemplateSelector( Predicate<ProxyProperty> condition ) 
+			: this ( condition, new NSString("MvxDefaultObjectListTableCell") ) 
+		{ }
+
+		public TemplateSelector( Predicate<ProxyProperty> condition, NSString cellIdentifier )
 		{
 			Condition = condition;
 			CellIdentifier = cellIdentifier;
 		}
 
-		public TemplateSelector ( Predicate<ProxyProperty> condition, NSString cellIdentifier, IMvxValueConverter valueConverter ) 
+		public TemplateSelector ( 
+			Predicate<ProxyProperty> condition, 
+			IMvxValueConverter valueConverter ) 
+			: this ( condition, new NSString("MvxDefaultObjectListTableCell") )
+		{
+			this.ValueConverter = valueConverter;
+		}
+
+		public TemplateSelector ( 
+			Predicate<ProxyProperty> condition, 
+			IMvxValueConverter valueConverter,
+			NSString cellIdentifier ) 
 			: this ( condition, cellIdentifier )
 		{
 			this.ValueConverter = valueConverter;

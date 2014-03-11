@@ -54,7 +54,6 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 				{ 
 					new TemplateSelector ( 
 						c => c.ValueType == typeof(DateTime), 
-						new NSString("MvxDefaultObjectListTableCell"),
 						new BirthDateConverter()
 					),
 					new TemplateSelector (
