@@ -81,14 +81,13 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\values\MvxBindingAttributes.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
-    <AndroidResource Include="Resources\values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
-    <AndroidResource Include="Resources\layout\ListItem_ReadOnly.axml" />
     <AndroidResource Include="Resources\layout\ListItem_TextEdit.axml" />
     <AndroidResource Include="Resources\layout\ListItem_DatePicker.axml" />
     <AndroidResource Include="Resources\layout\ListItem_Bool.axml" />
