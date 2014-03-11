@@ -66,10 +66,6 @@
     <Compile Include="MvxObjectListTableViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj">
-      <Project>{3599BAF2-49C0-403D-B777-47E93960F581}</Project>
-      <Name>MvvmCross-ObjectList.Droid.UILib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
       <Name>MvvmCross-ObjectList.Proxy</Name>
