@@ -3,9 +3,12 @@ mvvmcross-objectlist
 
 A sample 'Proof of Concept' project to create a object to list binding for MvvmCross
 
-Version 0.1
+## Version 0.2
+- Made the default dell in iOS a default value. Overrides can be done via the constructor.
+ 
+## Version 0.1
 - Added the first demo project for Touch and Droid
-
+- Added the set-up for the project
 
 
 Todo Items. 

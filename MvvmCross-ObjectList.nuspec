@@ -2,15 +2,14 @@
 <package >
   <metadata>
     <id>Mvvmcross-ObjectList</id>
-    <version>0.1</version>
+    <version>0.2</version>
     <title>MvvmCross ObjectList</title>
     <authors>Dexyon, JelleDamen</authors>
     <owners>Erik van Seters, Jelle Damen</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple proxy library, which converts an object into a list of key-values</description>
     <releaseNotes>
-    	Version 0.1
-			- Added the first demo project for Touch and Droid
+    	Version 0.2
     </releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>mvvm mvvmcross xamarin monodroid monotouch objectList</tags>
