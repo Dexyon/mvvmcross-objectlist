@@ -66,6 +66,10 @@ namespace MvvmCrossObjectList.Droid.UILib
 
 	public class TemplateSelector
 	{
+		public TemplateSelector(Predicate<ProxyProperty> condition) 
+			: this ( condition, Resource.Layout.ListItem_ReadOnly)
+		{ }
+
 		public TemplateSelector(Predicate<ProxyProperty> condition, int templateId)
 		{
 			Condition = condition;

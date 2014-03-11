@@ -21,9 +21,9 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			adapter.Setup (new System.Collections.Generic.List<TemplateSelector> ()
 				{ 
 					new TemplateSelector(x=> x.OriginalDescription == "Salary", Resource.Layout.ListItem_Salary),
-					new TemplateSelector(c=>c.IsReadOnly,Resource.Layout.ListItem_ReadOnly),
+					new TemplateSelector(c=>c.IsReadOnly),
 					//new TemplateSelector((c)=>c.ValueType == typeof(bool),Resource.Layout.ListItem_Bool),
-					new TemplateSelector(c=>c.OriginalDescription == "Age", Resource.Layout.ListItem_ReadOnly),
+					new TemplateSelector(c=>c.OriginalDescription == "Age"),
 					new TemplateSelector(c=>c.ValueType == typeof(DateTime),Resource.Layout.ListItem_DatePicker),
 					new TemplateSelector(c=>true,Resource.Layout.ListItem_TextEdit),
 
