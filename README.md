@@ -5,6 +5,7 @@ A sample 'Proof of Concept' project to create a object to list binding for MvvmC
 
 ## Version 0.2
 - Made the default dell in iOS a default value. Overrides can be done via the constructor.
+- Added a default listitem to the Droid Project. Overrides can be done via the constructor.
  
 ## Version 0.1
 - Added the first demo project for Touch and Droid
