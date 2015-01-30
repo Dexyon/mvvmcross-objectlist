@@ -4,8 +4,8 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
 using System.CodeDom.Compiler;
+using Foundation;
 
 namespace MvvmCrossObjectList.Touch.UILib
 {
@@ -13,10 +13,10 @@ namespace MvvmCrossObjectList.Touch.UILib
 	partial class MvxDefaultObjectListTableCell
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel lblDescription { get; set; }
+		UIKit.UILabel lblDescription { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel lblValue { get; set; }
+		UIKit.UILabel lblValue { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

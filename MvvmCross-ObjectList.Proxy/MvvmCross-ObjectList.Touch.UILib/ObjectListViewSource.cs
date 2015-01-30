@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Binding.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using Cirrious.CrossCore.Converters;
+using Cirrious.MvvmCross.Binding.Touch.Views;
+using UIKit;
+using Foundation;
 
 namespace MvvmCrossObjectList.Touch.UILib {
 	public class ObjectListViewSource : MvxTableViewSource {
