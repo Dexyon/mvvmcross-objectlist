@@ -1,4 +1,4 @@
-﻿using MonoTouch.UIKit;
+﻿using UIKit;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
 	public class Application {

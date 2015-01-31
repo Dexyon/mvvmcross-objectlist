@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace Dexyon.MvvmCrossObjectList.Touch
@@ -13,19 +13,19 @@ namespace Dexyon.MvvmCrossObjectList.Touch
 	partial class ExampleOverviewView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel BoiletPlateLabel1 { get; set; }
+		UIKit.UILabel BoiletPlateLabel1 { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel BoiletPlateLabel2 { get; set; }
+		UIKit.UILabel BoiletPlateLabel2 { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField BoiletPlateTextField1 { get; set; }
+		UIKit.UITextField BoiletPlateTextField1 { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField BoiletPlateTextField2 { get; set; }
+		UIKit.UITextField BoiletPlateTextField2 { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITableView TableView { get; set; }
+		UIKit.UITableView TableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

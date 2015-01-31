@@ -2,8 +2,8 @@
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Touch.Views;
 using Dexyon.MvvmCrossObjectList.Core.ViewModels;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using MvvmCrossObjectList.Touch.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Touch {
