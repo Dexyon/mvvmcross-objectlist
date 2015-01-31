@@ -1,8 +1,10 @@
 ﻿using System;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.CrossCore.Converters;
+using Foundation;
 
 namespace MvvmCrossObjectList.Touch.UILib {
+	[Register("MvxObjectListTableViewCell")]
 	public class MvxObjectListTableViewCell : MvxTableViewCell {
 
 		/// <summary>
