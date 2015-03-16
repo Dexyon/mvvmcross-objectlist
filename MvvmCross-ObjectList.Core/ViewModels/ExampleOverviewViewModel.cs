@@ -24,14 +24,15 @@ namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
 			};
 
 			CurrentPerson = 
-				new ProxyModel<Person>(
+				new ProxyModel<Person, ExampleOverviewViewModel>(
 					_currentPerson, 
+					this,
 					() => RaisePropertyChanged ( () => CurrentPerson ));
 		}
 
 		private Person _currentPerson;
 
-		public ProxyModel<Person> CurrentPerson
+		public ProxyModel<Person, ExampleOverviewViewModel> CurrentPerson
 		{ 
 			get; 
 			set; 

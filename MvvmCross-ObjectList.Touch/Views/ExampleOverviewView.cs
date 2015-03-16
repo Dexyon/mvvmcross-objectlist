@@ -77,17 +77,17 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 
 			set
 				.Bind ( BoiletPlateLabel1 )
-				.To ( vm => vm.CurrentPerson.baseModel.Age );
+				.To ( vm => vm.CurrentPerson.BaseModel.Age );
 			set
 				.Bind ( BoiletPlateTextField1 )
-				.To ( vm => vm.CurrentPerson.baseModel.Age );
+				.To ( vm => vm.CurrentPerson.BaseModel.Age );
 
 			set
 				.Bind ( BoiletPlateLabel2 )
-				.To ( vm => vm.CurrentPerson.baseModel.BirthPlace );
+				.To ( vm => vm.CurrentPerson.BaseModel.BirthPlace );
 			set
 				.Bind ( BoiletPlateTextField2 )
-				.To ( vm => vm.CurrentPerson.baseModel.BirthPlace );
+				.To ( vm => vm.CurrentPerson.BaseModel.BirthPlace );
 
 			set.Apply ();
 			TableView.ReloadData ();
