@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{98A2BBC4-399A-462B-ABD9-384379EEE888}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -19,6 +17,8 @@
     <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <ReleaseVersion>0.2</ReleaseVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,13 +102,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Core\MvvmCross-ObjectList.Core.csproj">
-      <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
-      <Name>MvvmCross-ObjectList.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
       <Name>MvvmCross-ObjectList.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmCross-ObjectList.Core\MvvmCross-ObjectList.Core.csproj">
+      <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
+      <Name>MvvmCross-ObjectList.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj">
       <Project>{3599BAF2-49C0-403D-B777-47E93960F581}</Project>
