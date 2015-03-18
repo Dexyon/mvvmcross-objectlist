@@ -7,11 +7,7 @@ namespace Dexyon.MvvmCrossObjectList.Core.Models
 	{
 
 		[ProxyModelAttribute(Description = "Full Name:", Order = 1 )]
-<<<<<<< HEAD
 		[MvxLang(Text="FullName", TextSource="TextSource")]
-=======
-		[MvxLang(Text="Fullname", TextSource="TextSource")]
->>>>>>> d0ec4927178588b873f41c1a0bfbbbf6291ad7f2
 		public string FullName { get; set; }
 
 		[ProxyModelAttribute(Description = "Birth Place:", Order = 3 )]
