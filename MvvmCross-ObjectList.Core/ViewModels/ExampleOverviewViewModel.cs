@@ -1,5 +1,5 @@
-using Cirrious.MvvmCross.ViewModels;
 using Dexyon.MvvmCrossObjectList.Core.Models;
+using Dexyon.MvvmCrossObjectList.Core.ViewModels;
 using Dexyon.MvvmCrossObjectList.Proxy;
 
 namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
@@ -7,7 +7,7 @@ namespace Dexyon.MvvmCrossObjectList.Core.ViewModels {
     /// <summary>
 	/// The ViewModel for the ExampleOverviewViewModel view
     /// </summary>
-	public class ExampleOverviewViewModel : MvxViewModel {
+	public class ExampleOverviewViewModel : BaseBabelViewModel {
 
 		/// <summary>
 		/// Initializes a new instance of the
