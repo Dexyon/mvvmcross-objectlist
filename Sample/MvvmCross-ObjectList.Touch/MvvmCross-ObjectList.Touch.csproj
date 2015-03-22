@@ -173,11 +173,11 @@
       <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
       <Name>MvvmCross-ObjectList.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Touch.UILib\MvvmCross-ObjectList.Touch.UILib.csproj">
+    <ProjectReference Include="..\..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Touch.UILib\MvvmCross-ObjectList.Touch.UILib.csproj">
       <Project>{99BCE847-1901-45B5-8592-9312F2DF091A}</Project>
       <Name>MvvmCross-ObjectList.Touch.UILib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
+    <ProjectReference Include="..\..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
       <Name>MvvmCross-ObjectList.Proxy</Name>
     </ProjectReference>

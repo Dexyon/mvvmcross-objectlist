@@ -128,15 +128,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
-      <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
-      <Name>MvvmCross-ObjectList.Proxy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvvmCross-ObjectList.Core\MvvmCross-ObjectList.Core.csproj">
       <Project>{98D81B5E-8B41-4ABB-B34F-31C77CFCABB3}</Project>
       <Name>MvvmCross-ObjectList.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj">
+    <ProjectReference Include="..\..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
+      <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
+      <Name>MvvmCross-ObjectList.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Droid.UILib\MvvmCross-ObjectList.Droid.UILib.csproj">
       <Project>{3599BAF2-49C0-403D-B777-47E93960F581}</Project>
       <Name>MvvmCross-ObjectList.Droid.UILib</Name>
     </ProjectReference>

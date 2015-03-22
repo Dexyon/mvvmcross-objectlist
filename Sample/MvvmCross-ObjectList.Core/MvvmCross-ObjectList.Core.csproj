@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="App.cs.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
@@ -71,7 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
+    <ProjectReference Include="..\..\MvvmCross-ObjectList.Proxy\MvvmCross-ObjectList.Proxy.csproj">
       <Project>{D9D47CFF-DCE8-4A12-BF36-202A3B5384BF}</Project>
       <Name>MvvmCross-ObjectList.Proxy</Name>
     </ProjectReference>
