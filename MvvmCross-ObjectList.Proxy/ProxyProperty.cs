@@ -9,12 +9,13 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 		private Func<object> _valueGetter;
 		private Type _valueType;
 		private Action<ProxyProperty> _notifyValueChanged;
+		private string _tibetBinding;
 
 		public ProxyProperty ()
 		{
 		}
 
-		internal ProxyProperty (Type valueType, string description, string originalDescription, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged)
+		internal ProxyProperty (Type valueType, string description, string originalDescription, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged, string tibetBinding)
 		{
 			_valueType = valueType;
 			Description = description;
@@ -23,6 +24,7 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 			_valueSetter = valueSetter;
 
 			_notifyValueChanged = notifyValueChanged;
+			_tibetBinding = tibetBinding;
 		}
 
 		#region INotifyPropertyChanged implementation
@@ -77,6 +79,12 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 		public Type ValueType{
 			get{ 
 				return _valueType;
+			}
+		}
+
+		public string BindingText {
+			get {
+				return _tibetBinding;
 			}
 		}
 	}

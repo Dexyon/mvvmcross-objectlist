@@ -34,7 +34,6 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 			_notifyChangedDelegate = raiseThisPropertyChanged;
 			//Create proxy property list
 			CreateProxyPropertyList (_baseModel);
-
 		}
 
 		/// <summary>
@@ -68,7 +67,8 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 						})
 						: null, 												
 					new Func<object>(()=>item.GetValue(instance,null)), 		// Getter
-					ExecuteNotifyAllProperties									// Notifies other properties
+					ExecuteNotifyAllProperties,									// Notifies other properties
+					""
 				);
 
 				// Add it to the list

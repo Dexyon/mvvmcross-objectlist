@@ -20,7 +20,8 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			//One layout to rule them all
 			adapter.Setup (new System.Collections.Generic.List<TemplateSelector> ()
 				{ 
-					new TemplateSelector(x=> x.OriginalDescription == "Salary", Resource.Layout.ListItem_Salary),
+					new TemplateSelector(x=> x.OriginalDescription == "Salary", Resource.Layout.listitem_readonly, 
+						"Text Value, Converter=Salary"),
 					new TemplateSelector(c=>c.IsReadOnly, Resource.Layout.listitem_readonly),
 					//new TemplateSelector((c)=>c.ValueType == typeof(bool),Resource.Layout.ListItem_Bool),
 					new TemplateSelector(c=>c.OriginalDescription == "Age", Resource.Layout.listitem_readonly),

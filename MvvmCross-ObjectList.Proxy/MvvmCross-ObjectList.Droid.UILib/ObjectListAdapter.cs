@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.Views;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Binding.Binders;
+using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.MvvmCross.Binding.Bindings;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Binding.Droid.Views;
 using Dexyon.MvvmCrossObjectList.Proxy;
+using Android.Widget;
 
 namespace MvvmCrossObjectList.Droid.UILib
 {
 	public class ObjectListAdapter : MvxAdapter
 	{
+
+		private readonly IMvxBindingDescriptionParser _bindingParser;
+
 		public ObjectListAdapter (Android.Content.Context context, IMvxAndroidBindingContext bindingContext)
 			: base(context, bindingContext)
 		{
+			this._bindingParser = Mvx.Resolve<IMvxBindingDescriptionParser>();
 		}
 
 		private bool _setup = true;
@@ -20,8 +29,7 @@ namespace MvvmCrossObjectList.Droid.UILib
 		public void Setup(List<TemplateSelector> templateSelectors)
 		{
 			_templateSelectors = templateSelectors;
-			if (_templateSelectors != null)
-				_setup = false;
+			_setup &= _templateSelectors == null;
 		}
 
 		public override int GetItemViewType (int position)
@@ -41,10 +49,8 @@ namespace MvvmCrossObjectList.Droid.UILib
 
 		public override int ViewTypeCount {
 			get { 
-				if (_setup)
-					return 1;
+				return _setup ? 1 : _templateSelectors.Count;
 
-				return _templateSelectors.Count;
 			}
 		}
 
@@ -62,6 +68,32 @@ namespace MvvmCrossObjectList.Droid.UILib
 
 			return base.GetBindableView (convertView, source, templateId);
 		}
+
+		/*protected override IMvxListItemView CreateBindableView (object dataContext, int templateId) {
+			var bindable =  base.CreateBindableView (dataContext, templateId);
+
+			TemplateSelector selector = null;
+
+			foreach (var sel in _templateSelectors) {
+				if (sel.Condition (source as ProxyProperty)) {
+					selector = sel;
+					break;
+				}
+			}
+
+			// Check if we need to set a custom binding
+			var mvxBindingContextOwner = viewToUse as IMvxBindingContextOwner;
+
+			if ( mvxBindingContextOwner != null && _bindingParser != null 
+				&& selector != null && !string.IsNullOrEmpty(selector.Binding) ) {
+				var bindingDescriptors = new List<MvxBindingDescription>( _bindingParser.Parse (selector.Binding));
+
+				mvxBindingContextOwner.AddBindings ( viewToUse, bindingDescriptors );
+			}
+
+			return bindable;
+
+		}*/
 	}
 
 	public class TemplateSelector
@@ -76,8 +108,15 @@ namespace MvvmCrossObjectList.Droid.UILib
 			TemplateId = templateId;
 		}
 
+		public TemplateSelector(Predicate<ProxyProperty> condition, int templateId, string bindingDescription) 
+			: this (condition, templateId)
+		{
+			Binding = bindingDescription;
+		}
+
 		public Predicate<ProxyProperty> Condition {get;set;}
 		public int TemplateId {get;set;}
+		public string Binding { get; private set;}
 	}
 }
 
