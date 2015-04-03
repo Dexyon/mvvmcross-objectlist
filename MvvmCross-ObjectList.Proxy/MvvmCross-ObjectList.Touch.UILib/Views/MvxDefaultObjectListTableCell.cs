@@ -1,8 +1,8 @@
 ﻿using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Dexyon.MvvmCrossObjectList.Proxy;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace MvvmCrossObjectList.Touch.UILib {
 	public partial class MvxDefaultObjectListTableCell : MvxObjectListTableViewCell {
