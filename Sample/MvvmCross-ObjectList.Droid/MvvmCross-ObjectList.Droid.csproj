@@ -104,6 +104,7 @@
     <Compile Include="Bootstrap\JsonLocalisationPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Views\SecondExampleOverviewView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -149,6 +150,9 @@
   <ItemGroup>
     <AndroidAsset Include="..\MvvmCross-ObjectList.Babel\ExampleOverviewViewModel.json">
       <Link>Assets\BabelResources\Text\ExampleOverviewViewModel.json</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\MvvmCross-ObjectList.Babel\SecondExampleOverviewViewModel.json">
+      <Link>Assets\BabelResources\Text\SecondExampleOverviewViewModel.json</Link>
     </AndroidAsset>
   </ItemGroup>
 </Project>

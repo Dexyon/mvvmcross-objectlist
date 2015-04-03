@@ -7,8 +7,8 @@ using Cirrious.MvvmCross.Droid.Views;
 using MvvmCrossObjectList.Droid.UILib;
 
 namespace Dexyon.MvvmCrossObjectList.Droid {
-	[Activity ( Label = "ExampleOverviewView.Droid" )]
-	public class ExampleOverviewView : MvxActivity {
+	[Activity ( Label = "SecondExampleOverviewView.Droid", MainLauncher = true )]
+	public class SecondExampleOverviewView : MvxActivity {
 
 		ObjectListAdapter adapter;
 
@@ -33,13 +33,7 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			// Set our view from the "main" layout resource
 			SetContentView ( Resource.Layout.Main );
 
-			var list = FindViewById<MvxListView> (Resource.Id.PersonList);
-			list.Adapter = adapter;
-		}
-		 
-		protected override void OnViewModelSet()
-		{
-
+			FindViewById<MvxListView> ( Resource.Id.PersonList ).Adapter = adapter;
 		}
 	}
 }
