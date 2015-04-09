@@ -1,30 +1,21 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Dexyon.MvvmCrossObjectList.Proxy
-{
-	public class ProxyProperty : INotifyPropertyChanged
-	{
+namespace Dexyon.MvvmCrossObjectList.Proxy {
+	public class ProxyProperty : INotifyPropertyChanged {
 		private Action<object> _valueSetter;
 		private Func<object> _valueGetter;
 		private Type _valueType;
 		private Action<ProxyProperty> _notifyValueChanged;
-		private string _tibetBinding;
 
-		public ProxyProperty ()
-		{
-		}
-
-		internal ProxyProperty (Type valueType, string description, string originalDescription, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged, string tibetBinding)
-		{
+		internal ProxyProperty ( Type valueType, string description, string propertyName, Action<object> valueSetter, Func<object> valueGetter, Action<ProxyProperty> notifyValueChanged ) {
 			_valueType = valueType;
 			Description = description;
-			OriginalDescription = originalDescription;
+			PropertyName = propertyName;
 			_valueGetter = valueGetter;
 			_valueSetter = valueSetter;
 
 			_notifyValueChanged = notifyValueChanged;
-			_tibetBinding = tibetBinding;
 		}
 
 		#region INotifyPropertyChanged implementation
@@ -34,33 +25,28 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 		#endregion
 
 		public object Value {
-			get{
-				if (_valueGetter != null) {
-					return _valueGetter ();
-				} else {
-					return null;
-				}
+			get {
+				return _valueGetter != null ? _valueGetter () : null;
 			}
-			set{
-				if (_valueSetter != null) {
-					_valueSetter (value);
+			set {
+				if ( _valueSetter != null ) {
+					_valueSetter ( value );
 
-					MyValueChangedAsWell();
+					MyValueChangedAsWell ();
 
-					if (_notifyValueChanged != null)
-						_notifyValueChanged (this);
+					if ( _notifyValueChanged != null )
+						_notifyValueChanged ( this );
 				} 
 			}
 		}
 
-		internal void MyValueChangedAsWell()
-		{
-			if (PropertyChanged != null) {
-				PropertyChanged (this, new PropertyChangedEventArgs ("Value"));
+		internal void MyValueChangedAsWell () {
+			if ( PropertyChanged != null ) {
+				PropertyChanged ( this, new PropertyChangedEventArgs ( "Value" ) );
 			}
 		}
 
-		public string OriginalDescription {
+		public string PropertyName {
 			get;
 			private set;
 		}
@@ -70,21 +56,15 @@ namespace Dexyon.MvvmCrossObjectList.Proxy
 			set;
 		}
 
-		public bool IsReadOnly{
-			get{ 
+		public bool IsReadOnly {
+			get { 
 				return _valueSetter == null;
 			}
 		}
 
-		public Type ValueType{
-			get{ 
+		public Type ValueType {
+			get { 
 				return _valueType;
-			}
-		}
-
-		public string BindingText {
-			get {
-				return _tibetBinding;
 			}
 		}
 	}

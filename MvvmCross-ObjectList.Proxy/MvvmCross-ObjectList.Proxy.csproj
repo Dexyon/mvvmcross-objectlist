@@ -38,6 +38,7 @@
     <Compile Include="ProxyModel.cs" />
     <Compile Include="ProxyModelAttribute.cs" />
     <Compile Include="MvxLangAttribute.cs" />
+    <Compile Include="PropertyMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

@@ -26,23 +26,6 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 		public override void ViewDidLoad () {
 			base.ViewDidLoad ();
 			
-			// Perform any additional setup after loading the view, typically from a nib.
-			/*var source = new MvxStandardTableViewSource(
-				TableView,
-				UITableViewCellStyle.Subtitle,
-				new NSString("ExampleOverviewView"),
-				"TitleText Description;DetailText Value",
-				UITableViewCellAccessory.DisclosureIndicator);
-
-			this.AddBindings(
-				new Dictionary<object, string>()
-				{
-					{ source, "ItemsSource ExampleViewModel" }
-				});
-
-			TableView.Source = source;
-			TableView.ReloadData();*/
-
 			TableView.RegisterNibForCellReuse(
 				UINib.FromName("SalaryTableCell", NSBundle.MainBundle),
 				new NSString("SalaryTableCell")
@@ -57,7 +40,7 @@ namespace Dexyon.MvvmCrossObjectList.Touch {
 						new BirthDateConverter()
 					),
 					new TemplateSelector (
-						c => c.OriginalDescription == "Salary",
+						c => c.PropertyName == "Salary",
 						new NSString("SalaryTableCell")
 					),
 				}

@@ -10,7 +10,7 @@ namespace Dexyon.MvvmCrossObjectList.Core {
 	{
 		public App()
 		{
-			RegisterAppStart<ExampleOverviewViewModel>();
+			RegisterAppStart<SecondExampleOverviewViewModel>();
 			InitializeText ();
 		}
 
