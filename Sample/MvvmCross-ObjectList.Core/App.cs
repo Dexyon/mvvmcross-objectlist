@@ -1,9 +1,9 @@
-﻿using Cirrious.MvvmCross.ViewModels;
-using Dexyon.MvvmCrossObjectList.Core.ViewModels;
-using Dexyon.MvvmCrossObjectList.Core.Services;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Plugins.JsonLocalisation;
+﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Localization;
+using Cirrious.MvvmCross.Plugins.JsonLocalisation;
+using Cirrious.MvvmCross.ViewModels;
+using Dexyon.MvvmCrossObjectList.Core.Services;
+using Dexyon.MvvmCrossObjectList.Core.ViewModels;
 
 namespace Dexyon.MvvmCrossObjectList.Core {
 	public class App : MvxApplication
