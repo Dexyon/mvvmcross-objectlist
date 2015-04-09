@@ -5,14 +5,22 @@ using Cirrious.CrossCore.Converters;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using UIKit;
 using Foundation;
+using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Binding.Binders;
+using Cirrious.MvvmCross.Binding.Bindings;
 
 namespace MvvmCrossObjectList.Touch.UILib {
 	public class ObjectListViewSource : MvxTableViewSource {
 
 		private bool _noCustomTemplates = true;
+
 		private List<TemplateSelector> _templateSelectors = null;
+
 		private static readonly NSString DefaultCellIdentifier = 
 			new NSString("MvxDefaultObjectListTableCell");
+		
+		private readonly IMvxBindingDescriptionParser _bindingParser;
 
 		/// <summary>
 		/// Initializes a new instance of the 
@@ -21,6 +29,7 @@ namespace MvvmCrossObjectList.Touch.UILib {
 		/// <param name="pointer">Pointer.</param>
 		public ObjectListViewSource ( IntPtr pointer ) 
 			: base ( pointer ) {
+			this._bindingParser = Mvx.Resolve<IMvxBindingDescriptionParser>();
 		}
 
 		/// <summary>
@@ -33,6 +42,7 @@ namespace MvvmCrossObjectList.Touch.UILib {
 			tableView.RegisterNibForCellReuse(
 				UINib.FromName("MvxDefaultObjectListTableCell", NSBundle.MainBundle),
 				DefaultCellIdentifier);
+			this._bindingParser = Mvx.Resolve<IMvxBindingDescriptionParser>();
 		}
 
 		public void Setup(List<TemplateSelector> templateSelectors)
@@ -57,12 +67,28 @@ namespace MvvmCrossObjectList.Touch.UILib {
 					}
 				}
 			}
+
 			var reusableCell = 
 				TableView.DequeueReusableCell ( cellIdentifier, indexPath );
 
-			if ( reusableCell is MvxObjectListTableViewCell  && templateSelector != null ) {
-				((MvxObjectListTableViewCell)reusableCell).ValueConverter = 
-					templateSelector.ValueConverter;
+			if ( templateSelector == null ) {
+				return reusableCell;
+			}
+
+
+			// Check if we can pass a value converter to our custom ListTableViewCell
+			// NOTE: This will be deprecated if the text binding works.
+			var mvxObjectListTableViewCell = reusableCell as MvxObjectListTableViewCell;
+			if ( mvxObjectListTableViewCell != null ) {
+				mvxObjectListTableViewCell.ValueConverter = templateSelector.ValueConverter;
+			}
+
+			// Check if we need to set a custom binding
+			var mvxBindingContextOwner = reusableCell as IMvxBindingContextOwner;
+			if ( mvxBindingContextOwner != null && _bindingParser != null ) {
+				IEnumerable<MvxBindingDescription> bindingDescriptors = _bindingParser.Parse (templateSelector.BindingText);
+				
+				mvxBindingContextOwner.AddBindings ( this, bindingDescriptors );
 			}
 
 			return reusableCell;
@@ -77,19 +103,26 @@ namespace MvvmCrossObjectList.Touch.UILib {
 			: this ( condition, new NSString("MvxDefaultObjectListTableCell") ) 
 		{ }
 
+		public TemplateSelector( Predicate<ProxyProperty> condition, string bindingText ) 
+			: this ( condition, new NSString("MvxDefaultObjectListTableCell"), bindingText ) 
+		{ }
+
 		public TemplateSelector( Predicate<ProxyProperty> condition, NSString cellIdentifier )
 		{
 			Condition = condition;
 			CellIdentifier = cellIdentifier;
 		}
 
-		public TemplateSelector ( 
-			Predicate<ProxyProperty> condition, 
-			IMvxValueConverter valueConverter ) 
-			: this ( condition, new NSString("MvxDefaultObjectListTableCell") )
+		public TemplateSelector( Predicate<ProxyProperty> condition, NSString cellIdentifier, string bindingText )
 		{
-			this.ValueConverter = valueConverter;
+			Condition = condition;
+			CellIdentifier = cellIdentifier;
+			BindingText = bindingText;
 		}
+
+		public TemplateSelector ( Predicate<ProxyProperty> condition, IMvxValueConverter valueConverter ) 
+			: this ( condition, valueConverter, new NSString("MvxDefaultObjectListTableCell") )
+		{ }
 
 		public TemplateSelector ( 
 			Predicate<ProxyProperty> condition, 
@@ -103,6 +136,7 @@ namespace MvvmCrossObjectList.Touch.UILib {
 		public Predicate<ProxyProperty> Condition {get;set;}
 		public NSString CellIdentifier {get;set;}
 		public IMvxValueConverter ValueConverter { get; private set; }
+		public string BindingText { get; private set; }
 	}
 }
 
