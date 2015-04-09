@@ -27,8 +27,8 @@ namespace Dexyon.MvvmCrossObjectList.Droid {
 			//One layout to rule them all. Update with default (template and views, and views)
 			adapter.Setup (
 				new List<TemplateSelector> { 
-					new TemplateSelector ( x => x.OriginalDescription == "Salary", "Text Value, Converter=Salary" ),
-					new TemplateSelector ( c => c.IsReadOnly || c.OriginalDescription == "Age" ),
+					new TemplateSelector ( x => x.PropertyName == "Salary", "Text Value, Converter=Salary" ),
+					new TemplateSelector ( c => c.IsReadOnly || c.PropertyName == "Age" ),
 					new TemplateSelector ( c => c.ValueType == typeof(DateTime), dateTimeListTemplate ),
 					new TemplateSelector ( c => true, editListTemplate ),
 				}, 
